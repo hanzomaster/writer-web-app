@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script
-        src="https://cdn.tiny.cloud/1/5qz6rtfg6fa7qv8q8673ahd0w5b687phlnw1k4fm2va6szb7/tinymce/6/tinymce.min.js"
+        src="https://cdn.tiny.cloud/1/o6c9qgqdf66yg9vkls5e3qkpsetojjhavvpwqwl7jaqte9uh/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
     <title>Edit Notes</title>
     <link rel="stylesheet" href="css/reset.css">
@@ -14,16 +14,18 @@
 <body>
     <form method="post">
         <input class="title" type="text" placeholder="Title" spellcheck="true" />
-        <textarea id="mytextarea" aria-label="Content" placeholder="Write something..."></textarea>
+        <textarea id="textarea" aria-label="Content" placeholder="Write something..."></textarea>
+        <button type="button" name="submit">Submit</button>
+        <button type="button" onclick="window.history.back()">Cancel</button>
     </form>
 
     <script type="text/javascript">
         tinymce.init({
             height: 550,
-            selector: '#mytextarea',
+            selector: '#textarea',
             resize: false,
             plugins:
-                "advlist autolink link image lists charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking table emoticons template paste help",
+                "advlist autolink link image lists charmap preview anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking table emoticons template help",
             toolbar:
                 "undo redo | styleselect | fontselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | forecolor backcolor emoticons | searchreplace wordcount",
             toolbar_mode: 'floating',
@@ -31,6 +33,6 @@
         });
     </script>
 
-    <script src="js/editor.js"></script>
+    <script src="../js/editor.js" />
 </body>
 </html>
