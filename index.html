@@ -4,17 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Notes Taking</title>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
+  <div class="wrapper">
     <nav>
+      <input type="checkbox" id="show-search" aria-label="show-search">
+      <input type="checkbox" id="show-menu" aria-label="show-menu">
+      <label for="show-menu" class="menu-icon"><em class="fas fa-bars"></em></label>
+      <div class="content">
+        <div class="logo"><a href="#">CodingNepal</a></div>
+        <ul class="links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#" class="desktop-link">Features</a></li>
+          <li><a href="#">Notes</a></li>
+        </ul>
+      </div>
+      <label for="show-search" class="search-icon"><em class="fas fa-search"></em></label>
     </nav>
-  </header>
-  <a href="editor.html">
-    <button type="button">Edit</button>
-  </a>
+  </div>
+  <div class="dummy-text">
+    <h2>Responsive Dropdown Menu Bar with Searchbox</h2>
+    <h2>using only HTML & CSS - Flexbox</h2>
+    <a href="editor.html">
+      <button type="button">Edit</button>
+    </a>
+  </div>
 
   <script src="js/index.js" />
 </body>
