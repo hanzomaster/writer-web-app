@@ -9,10 +9,8 @@ const title = $('.title')
 $('textarea').value = 'Hello World'
 
 $('button[name="submit"]').addEventListener('click', () => {
-  // check if title is empty
   if (title.value === '') {
-    // show a popup to user
-    alert('Title is empty')
+    alert('Please enter a title')
     return
   }
   console.log(title.value)
