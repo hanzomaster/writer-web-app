@@ -1,5 +1,5 @@
 .wrapper {
-    background: #171c24;
+    background: #1f87ee;
     position: fixed;
     width: 100%;
 }
@@ -121,7 +121,6 @@ nav .content .links {
     display: none;
 }
 
-/* Dropdown Menu code start */
 .content .links ul {
     position: absolute;
     background: #171c24;
@@ -195,7 +194,7 @@ nav .content .links {
     nav .content .links {
         display: block;
         position: fixed;
-        background: #14181f;
+        background: #11467a;
         height: 100%;
         width: 100%;
         top: 70px;
@@ -228,7 +227,6 @@ nav .content .links {
         display: none;
     }
 
-    /* dropdown responsive code start */
     .content .links ul,
     .content .links ul ul {
         position: static;
@@ -281,10 +279,4 @@ nav .content .links {
 
 .dummy-text {
     position: relative;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    padding: 0 20px;
-    text-align: center;
-    transform: translate(-50%, -50%);
 }

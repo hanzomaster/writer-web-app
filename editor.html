@@ -15,8 +15,10 @@
     <form method="post">
         <input class="title" type="text" placeholder="Title" spellcheck="true" />
         <textarea id="textarea" aria-label="Content" placeholder="Write something..."></textarea>
-        <button type="button" name="submit">Submit</button>
-        <button type="button" onclick="window.history.back()">Cancel</button>
+        <div class="submit">
+            <button type="button" name="submit">Submit</button>
+            <button type="button" onclick="window.history.back()">Cancel</button>
+        </div>
     </form>
 
     <script type="text/javascript">
@@ -25,7 +27,7 @@
             selector: '#textarea',
             resize: false,
             plugins:
-                "advlist autolink link image lists charmap preview anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking table emoticons template help",
+                "autoresize advlist autolink link image lists charmap preview anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking table emoticons template help",
             toolbar:
                 "undo redo | styleselect | fontselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | forecolor backcolor emoticons | searchreplace wordcount",
             toolbar_mode: 'floating',

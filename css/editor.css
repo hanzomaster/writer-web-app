@@ -6,7 +6,7 @@
 
   border-radius: 10px;
 
-  font-size: 22px;
+  font-size: 2rem;
   font-weight: bold;
 
   word-break: break-word;
@@ -14,4 +14,39 @@
 
 .title:focus {
   border: 2px solid #1f87ee;
+}
+
+.submit {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 420px) {
+  .submit {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+button {
+  width: 200px;
+  color: white;
+  margin: 1rem 0;
+  background: #1f87ee;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+
+button:hover {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
 }
