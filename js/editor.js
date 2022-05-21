@@ -6,8 +6,6 @@ let noteStorage = []
 
 const title = $('.title')
 
-$('textarea').value = 'Hello World'
-
 $('button[name="submit"]').addEventListener('click', () => {
   if (title.value === '') {
     alert('Please enter a title')
