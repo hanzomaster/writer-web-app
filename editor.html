@@ -17,7 +17,7 @@
         <textarea id="textarea" aria-label="Content" placeholder="Write something..."></textarea>
         <div class="submit">
             <button type="button" name="submit">Submit</button>
-            <button type="button" onclick="window.history.back()">Cancel</button>
+            <button type="button" onclick="location.href='index.html'">Cancel</button>
         </div>
     </form>
 
@@ -25,7 +25,7 @@
         tinymce.init({
             height: 550,
             selector: '#textarea',
-            resize: false,
+            resize: true,
             plugins:
                 "autoresize advlist autolink link image lists charmap preview anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking table emoticons template help",
             toolbar:

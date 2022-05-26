@@ -1,33 +1,46 @@
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 const params = new URLSearchParams(window.location.search)
-console.log(params.get('edit'))
-let noteStorage = []
 
+let noteStorage = JSON.parse(sessionStorage.getItem('notes')) || []
 const title = $('.title')
+const isEdit = params.get('edit')
+console.log(isEdit)
+
+if (isEdit === 'true') {
+  const noteEdit = noteStorage.find(item => item.id === params.get('id'))
+  title.value = noteEdit.title
+  $('textarea').value = noteEdit.content
+  $('button[name="submit"]').textContent = 'Update'
+}
 
 $('button[name="submit"]').addEventListener('click', () => {
   if (title.value === '') {
     alert('Please enter a title')
     return
   }
-
-  const d = new Date()
-  const date = `${d.toLocaleDateString('vi-VI')} ${d.toLocaleTimeString(
-    'vi-VI'
-  )}`
-
-  const note = {
-    id: (Math.random() + 1).toString(36).substring(7), // Generate a random string id
-    title: title.value,
-    content: tinymce.activeEditor.getContent(),
-    lastUpdate: date,
-    bookmark: false,
+  let note
+  if (isEdit === 'true') {
+    noteStorage.forEach(item => {
+      if (item.id === params.get('id')) {
+        item.title = title.value
+        item.content = tinymce.activeEditor.getContent()
+        item.lastUpdate = new Date()
+      }
+      note = { ...item }
+    })
+  } else {
+    const d = new Date()
+    note = {
+      id: (Math.random() + 1).toString(36).substring(7), // Generate a random string id
+      title: title.value,
+      content: tinymce.activeEditor.getContent(),
+      lastUpdate: d,
+      bookmark: false,
+    }
+    noteStorage.push(note)
   }
 
-  const data = JSON.parse(sessionStorage.getItem('note')) || []
-
-  data.push(note)
-  sessionStorage.setItem('note', JSON.stringify(data))
+  sessionStorage.setItem('notes', JSON.stringify(noteStorage))
   window.history.back()
 })
